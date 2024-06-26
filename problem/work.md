@@ -17,7 +17,7 @@ An online store wants to sort products by popularity, where popularity is determ
 Relevance:
 Displaying popular products at the top of the list can drive more sales and enhance user satisfaction. Sorting by popularity helps customers discover trending items, improving their shopping experience.
 
-
+<hr>
 
 #### References:
 - Help: https://chatgpt.com/share/e735a8b3-5c39-4b06-baaa-3feef6556d19
