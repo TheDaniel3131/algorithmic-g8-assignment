@@ -19,11 +19,11 @@ Displaying popular products at the top of the list can drive more sales and enha
 
 
 
-References:
-https://chatgpt.com/share/e735a8b3-5c39-4b06-baaa-3feef6556d19
+#### References:
+- Help: https://chatgpt.com/share/e735a8b3-5c39-4b06-baaa-3feef6556d19
 
-https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/
-https://www.geeksforgeeks.org/quick-sort-algorithm/
+1. https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/
+2. https://www.geeksforgeeks.org/quick-sort-algorithm/
 
-https://www.youtube.com/watch?v=Vtckgz38QHs&ab_channel=BroCode
-https://www.youtube.com/watch?v=3j0SWDX4AtU
+1. https://www.youtube.com/watch?v=Vtckgz38QHs&ab_channel=BroCode
+2. https://www.youtube.com/watch?v=3j0SWDX4AtU
