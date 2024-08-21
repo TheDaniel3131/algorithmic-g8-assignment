@@ -124,9 +124,9 @@ reverse_sorted_arr = list(range(10000000, 0, -1))
 random_arr = [random.randint(0, 10000000) for _ in range(10000000)]
 
 # Display Arrays for comparison
-print(sorted_arr)
-print(reverse_sorted_arr)
-print(random_arr)
+# print(sorted_arr)
+# print(reverse_sorted_arr)
+# print(random_arr)
 
 # Test Quick Sort on best-case scenario (Already Sorted)
 best_case_time = test_quick_sort(sorted_arr)
