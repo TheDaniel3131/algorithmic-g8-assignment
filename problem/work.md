@@ -27,3 +27,65 @@ Displaying popular products at the top of the list can drive more sales and enha
 
 1. https://www.youtube.com/watch?v=Vtckgz38QHs&ab_channel=BroCode
 2. https://www.youtube.com/watch?v=3j0SWDX4AtU
+
+
+```python
+// mergesort.py
+
+import time
+import random
+
+def test_merge_sort(arr):
+    start_time = time.time()
+    merge_sort(arr)
+    end_time = time.time()
+    return end_time - start_time
+
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+# Arrays with 10,000,000 elements
+sorted_arr = list(range(10000000))
+reverse_sorted_arr = list(range(10000000, 0, -1))
+random_arr = [random.randint(0, 10000000) for _ in range(10000000)]
+
+# Display Arrays for comparison
+# print(sorted_arr)
+# print(reverse_sorted_arr)
+# print(random_arr)
+
+# Test Merge Sort on best-case scenario (Already Sorted)
+best_case_time = test_merge_sort(sorted_arr)
+print(f"Merge Sort (Best Case) took {best_case_time:.6f} seconds")
+
+# Test Merge Sort on worst-case scenario (Reverse Sorted)
+worst_case_time = test_merge_sort(reverse_sorted_arr)
+print(f"Merge Sort (Worst Case) took {worst_case_time:.6f} seconds")
+```
