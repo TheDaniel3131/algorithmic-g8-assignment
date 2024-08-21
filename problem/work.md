@@ -99,19 +99,17 @@ import random
 
 def quick_sort(arr, low, high):
     if low < high:
-        pi = partition(arr, low, high)
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
-
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
-    for j in range(low, high):
-        if arr[j] < pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+        pivot_index = random.randint(low, high)  # Choose a random pivot index
+        pivot = arr[pivot_index]
+        arr[pivot_index], arr[high] = arr[high], arr[pivot_index]  # Move pivot to the end
+        i = low
+        for j in range(low, high):
+            if arr[j] < pivot:
+                arr[i], arr[j] = arr[j], arr[i]
+                i += 1
+        arr[i], arr[high] = arr[high], arr[i]  # Move pivot to its final position
+        quick_sort(arr, low, i - 1)
+        quick_sort(arr, i + 1, high)
 
 def test_quick_sort(arr):
     arr_copy = arr.copy()
@@ -126,9 +124,9 @@ reverse_sorted_arr = list(range(10000000, 0, -1))
 random_arr = [random.randint(0, 10000000) for _ in range(10000000)]
 
 # Display Arrays for comparison
-# print(sorted_arr)
-# print(reverse_sorted_arr)
-# print(random_arr)
+print(sorted_arr)
+print(reverse_sorted_arr)
+print(random_arr)
 
 # Test Quick Sort on best-case scenario (Already Sorted)
 best_case_time = test_quick_sort(sorted_arr)
@@ -137,6 +135,7 @@ print(f"Quick Sort (Best Case) took {best_case_time:.6f} seconds")
 # Test Quick Sort on worst-case scenario (Reverse Sorted)
 worst_case_time = test_quick_sort(reverse_sorted_arr)
 print(f"Quick Sort (Worst Case) took {worst_case_time:.6f} seconds")
+
 
 
 ```
