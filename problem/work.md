@@ -102,12 +102,14 @@ def quick_sort(arr, low, high):
         pivot_index = random.randint(low, high)  # Choose a random pivot index
         pivot = arr[pivot_index]
         arr[pivot_index], arr[high] = arr[high], arr[pivot_index]  # Move pivot to the end
+        
         i = low
         for j in range(low, high):
             if arr[j] < pivot:
                 arr[i], arr[j] = arr[j], arr[i]
                 i += 1
         arr[i], arr[high] = arr[high], arr[i]  # Move pivot to its final position
+        
         quick_sort(arr, low, i - 1)
         quick_sort(arr, i + 1, high)
 
@@ -119,14 +121,9 @@ def test_quick_sort(arr):
     return end_time - start_time
 
 # Arrays with 10,000,000 elements
-sorted_arr = list(range(10000000))
-reverse_sorted_arr = list(range(10000000, 0, -1))
-random_arr = [random.randint(0, 10000000) for _ in range(10000000)]
-
-# Display Arrays for comparison
-# print(sorted_arr)
-# print(reverse_sorted_arr)
-# print(random_arr)
+n = 10000000
+sorted_arr = list(range(n))
+reverse_sorted_arr = list(range(n-1, -1, -1))
 
 # Test Quick Sort on best-case scenario (Already Sorted)
 best_case_time = test_quick_sort(sorted_arr)
